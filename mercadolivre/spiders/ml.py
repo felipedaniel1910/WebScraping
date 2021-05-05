@@ -1,6 +1,7 @@
 #terminal: pip install scapy
 #terminal:
 #para rodar: terminal: scrapy runspider ml.py
+#ver como gerar arquivo Json
 
 import scrapy
 
