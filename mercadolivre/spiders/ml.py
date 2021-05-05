@@ -1,10 +1,10 @@
 #terminal: pip install scapy
 #terminal:
 #para rodar: terminal: scrapy runspider ml.py
-#ver como gerar arquivo Json
+#gerar json: scrapy crawl ml -o ml.json
+
 
 import scrapy
-
 
 class MlSpider(scrapy.Spider):
     name = 'ml'
@@ -21,3 +21,11 @@ class MlSpider(scrapy.Spider):
                 'title' : title,
                 'link': link
             }
+
+'''verificar se existe proxima pagina
+    //a[contains(@title,"Próxima")]/href
+    href pega o link
+
+        next_page = response.xpath('//a[contains(@title,"Próxima")]/href').get()
+        if next_page:
+            yield scrapy.Request(url=next_page, callback=self.parse)
