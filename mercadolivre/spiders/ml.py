@@ -29,3 +29,4 @@ class MlSpider(scrapy.Spider):
         next_page = response.xpath('//a[contains(@title,"Próxima")]/href').get()
         if next_page:
             yield scrapy.Request(url=next_page, callback=self.parse)
+'''
